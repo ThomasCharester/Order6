@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1sui012" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="17.0.2">
+  <bpmn:collaboration id="Collaboration_0uv6nf0">
+    <bpmn:participant id="Participant_1cmbpbp" name="Распределить нагрузку преподаватедей" processRef="Process_1tw3fzo" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1tw3fzo" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_1nsjqi7" name="Получение информации о преподавателях">
+      <bpmn:outgoing>Flow_1hhdtv7</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_18cf81v" name="Верифициро-вать данные">
+      <bpmn:incoming>Flow_1hhdtv7</bpmn:incoming>
+      <bpmn:outgoing>Flow_0u8xoa9</bpmn:outgoing>
+      <bpmn:property id="Property_0v7spij" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_1tvxpm6">
+        <bpmn:sourceRef>DataObjectReference_1ri6c8z</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0v7spij</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:task>
+    <bpmn:dataObjectReference id="DataObjectReference_1ri6c8z" name="Файл с преподавате-лями" dataObjectRef="DataObject_1bbnk3p" />
+    <bpmn:dataObject id="DataObject_1bbnk3p" />
+    <bpmn:task id="Activity_0hrag8y" name="Проанализи-ровать нагрузку преподавателя">
+      <bpmn:incoming>Flow_0u8xoa9</bpmn:incoming>
+      <bpmn:incoming>Flow_1rl6b5l</bpmn:incoming>
+      <bpmn:outgoing>Flow_0losiak</bpmn:outgoing>
+      <bpmn:property id="Property_0af7j6q" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_02rh51r">
+        <bpmn:sourceRef>DataObjectReference_1wff7va</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0af7j6q</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:task>
+    <bpmn:dataObjectReference id="DataObjectReference_1wff7va" name="Данные о преподавателе" dataObjectRef="DataObject_122ox0g" />
+    <bpmn:dataObject id="DataObject_122ox0g" />
+    <bpmn:exclusiveGateway id="Gateway_0nvb00x" name="Превышает ли нагрузка установленные нормы?">
+      <bpmn:incoming>Flow_0losiak</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xw18xz</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1ymhoi8</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Activity_0ypehhl" name="Предложить варианты перераспре-деления нагрузки">
+      <bpmn:incoming>Flow_1xw18xz</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rl6b5l</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_1eebr6j" name="Передать информацию в отдел кадров">
+      <bpmn:incoming>Flow_1ymhoi8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1hhdtv7" sourceRef="StartEvent_1nsjqi7" targetRef="Activity_18cf81v" />
+    <bpmn:sequenceFlow id="Flow_0u8xoa9" sourceRef="Activity_18cf81v" targetRef="Activity_0hrag8y" />
+    <bpmn:sequenceFlow id="Flow_1rl6b5l" sourceRef="Activity_0ypehhl" targetRef="Activity_0hrag8y" />
+    <bpmn:sequenceFlow id="Flow_0losiak" sourceRef="Activity_0hrag8y" targetRef="Gateway_0nvb00x" />
+    <bpmn:sequenceFlow id="Flow_1xw18xz" name="Да" sourceRef="Gateway_0nvb00x" targetRef="Activity_0ypehhl" />
+    <bpmn:sequenceFlow id="Flow_1ymhoi8" sourceRef="Gateway_0nvb00x" targetRef="Event_1eebr6j" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0uv6nf0">
+      <bpmndi:BPMNShape id="Participant_1cmbpbp_di" bpmnElement="Participant_1cmbpbp" isHorizontal="true">
+        <dc:Bounds x="156" y="80" width="704" height="350" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1nsjqi7">
+        <dc:Bounds x="252" y="232" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="227" y="275" width="86" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18cf81v_di" bpmnElement="Activity_18cf81v">
+        <dc:Bounds x="360" y="210" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_1ri6c8z_di" bpmnElement="DataObjectReference_1ri6c8z">
+        <dc:Bounds x="252" y="125" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="234" y="182" width="72" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0hrag8y_di" bpmnElement="Activity_0hrag8y">
+        <dc:Bounds x="530" y="210" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0od5xhx" bpmnElement="DataObjectReference_1wff7va">
+        <dc:Bounds x="472" y="105" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="450" y="162" width="80" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0nvb00x_di" bpmnElement="Gateway_0nvb00x" isMarkerVisible="true">
+        <dc:Bounds x="675" y="225" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="749" y="223" width="82" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ypehhl_di" bpmnElement="Activity_0ypehhl">
+        <dc:Bounds x="650" y="110" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1eebr6j_di" bpmnElement="Event_1eebr6j">
+        <dc:Bounds x="682" y="312" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="662" y="355" width="77" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1hhdtv7_di" bpmnElement="Flow_1hhdtv7">
+        <di:waypoint x="288" y="250" />
+        <di:waypoint x="360" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0u8xoa9_di" bpmnElement="Flow_0u8xoa9">
+        <di:waypoint x="460" y="250" />
+        <di:waypoint x="530" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0losiak_di" bpmnElement="Flow_0losiak">
+        <di:waypoint x="630" y="250" />
+        <di:waypoint x="675" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xw18xz_di" bpmnElement="Flow_1xw18xz">
+        <di:waypoint x="700" y="225" />
+        <di:waypoint x="700" y="190" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="708" y="205" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rl6b5l_di" bpmnElement="Flow_1rl6b5l">
+        <di:waypoint x="650" y="150" />
+        <di:waypoint x="640" y="150" />
+        <di:waypoint x="640" y="220" />
+        <di:waypoint x="630" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ymhoi8_di" bpmnElement="Flow_1ymhoi8">
+        <di:waypoint x="700" y="275" />
+        <di:waypoint x="700" y="312" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_1tvxpm6_di" bpmnElement="DataInputAssociation_1tvxpm6">
+        <di:waypoint x="288" y="159" />
+        <di:waypoint x="390" y="210" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_02rh51r_di" bpmnElement="DataInputAssociation_02rh51r">
+        <di:waypoint x="508" y="148" />
+        <di:waypoint x="570" y="210" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
