@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-02T10:57:48.332Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 OPR/109.0.0.0" etag="2mqcWSGzgKjzqmU_ur1Z" version="24.4.8" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-02T10:59:50.769Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 OPR/109.0.0.0" etag="b64SHlK-t52W15UqQRuI" version="24.4.8" type="github">
   <diagram name="Страница — 1" id="v00zqgnZbxmumNdSIBY3">
     <mxGraphModel dx="553" dy="733" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -33,6 +33,18 @@
         </mxCell>
         <mxCell id="c9bf9Scs0g08PIBnZ7ZU-13" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+startUI():&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+userMenu():&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+adminMenu():&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+teachersEditing():&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: normal;&quot;&gt;+accountsEditing():&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="c9bf9Scs0g08PIBnZ7ZU-10">
           <mxGeometry y="58" width="140" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="c9bf9Scs0g08PIBnZ7ZU-14" value="Classname" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="520" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c9bf9Scs0g08PIBnZ7ZU-15" value="+password:string&lt;div&gt;+login:string&lt;/div&gt;&lt;div&gt;+admin:bool&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="c9bf9Scs0g08PIBnZ7ZU-14">
+          <mxGeometry y="26" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="c9bf9Scs0g08PIBnZ7ZU-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="c9bf9Scs0g08PIBnZ7ZU-14">
+          <mxGeometry y="80" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="c9bf9Scs0g08PIBnZ7ZU-17" value="+addToFile():void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="c9bf9Scs0g08PIBnZ7ZU-14">
+          <mxGeometry y="88" width="160" height="22" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
